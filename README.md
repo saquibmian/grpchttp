@@ -2,6 +2,8 @@
 
 grpchttp is a server that can serve both gRPC and the grpc-web-gateway JSON proxy on the same connection.
 
+A swagger UI is also exposed if a `swagger.json` is provided.
+
 ## how to use it
 
 Here is a code sample:
@@ -18,7 +20,7 @@ config := grpchttp.Config{
     Address:     addr,
     Cert:        &pair,
     RootCAs:     certPool,
-    SwaggerJSON: api.Swagger,
+    SwaggerJSON: // your swagger json,
     RegisterServices: func(s *grpc.Server) error {
         // register your gRPC services here
     },
